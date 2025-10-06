@@ -105,6 +105,8 @@ configs:
 # Override Redis settings
 # https://github.com/bitnami/charts/tree/ba40e46ec6831e039f5bf213ab10e9748603ce6c/bitnami/redis
 redis:
+  image:
+    repository: bitnamilegacy/redis
   architecture: standalone
   auth:
     enabled: false
@@ -128,6 +130,8 @@ redis:
         cpu: 0.5
   metrics:
     enabled: true
+    image:
+      repository: bitnamilegacy/redis-exporter
   sysctlImage:
     # Disable this setting in production if you are not running Redis in Linux
     enabled: true 
